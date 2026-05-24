@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faça Pessoas Dizerem SIM — O Guia Completo da Influência Humana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#070C12;
+  --ink-mid:#0D1825;
+  --ink-lift:#132236;
+  --ink-card:#1A2D42;
+  --gold:#C9A84C;
+  --gold-lt:#E8CC7A;
+  --gold-dk:#8A6B28;
+  --red:#E94560;
+  --red-dk:#A82D45;
+  --cream:#F0EAD8;
+  --cream-dk:#C8BC9A;
+  --silver:#6E8090;
+  --white:#FFFFFF;
+  --r:16px;
+  --r-sm:8px;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--cream);overflow-x:hidden;line-height:1.6}
+
+/* ── URGENCY BAR ── */
+#urgency-bar{
+  position:sticky;top:0;z-index:999;
+  background:linear-gradient(90deg,#8A1F30,#C9A84C 50%,#8A1F30);
+  padding:0;box-shadow:0 2px 30px rgba(201,168,76,.4);
+}
+.urgency-inner{
+  display:flex;align-items:center;justify-content:center;gap:20px;
+  padding:12px 24px;flex-wrap:wrap;
+}
+.urgency-text{
+  font-family:'Cinzel',serif;font-size:13px;font-weight:600;
+  letter-spacing:1.5px;color:var(--ink);text-transform:uppercase;
+}
+.timer-wrap{display:flex;align-items:center;gap:10px}
+.timer-label{font-size:12px;font-weight:600;color:var(--ink);opacity:.85;letter-spacing:.5px}
+.timer-digits{display:flex;align-items:center;gap:4px}
+.t-block{
+  background:var(--ink);color:var(--gold);
+  font-family:'Cinzel',serif;font-size:20px;font-weight:700;
+  width:46px;height:40px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 12px rgba(0,0,0,.4);
+}
+.t-sep{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:2px;opacity:.7}
+.urgency-pill{
+  background:var(--ink);color:var(--gold);
+  font-family:'Cinzel',serif;font-size:11px;font-weight:700;
+  padding:5px 14px;border-radius:100px;letter-spacing:1.5px;
+  white-space:nowrap;
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,.08) 0%,transparent 70%),
+    linear-gradient(180deg,var(--ink-mid) 0%,var(--ink) 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:100px 24px 80px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='.8' fill='%23C9A84C' fill-opacity='.12'/%3E%3C/svg%3E");
+  opacity:.6;pointer-events:none;
+}
+.hero-eyebrow{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:4px;text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(201,168,76,.35);padding:8px 24px;border-radius:100px;
+  display:inline-block;margin-bottom:40px;
+  animation:fadeUp .7s ease both;
+}
+.hero-h1{
+  font-family:'Cinzel',serif;font-size:clamp(54px,9vw,110px);font-weight:900;
+  line-height:.95;color:var(--white);margin-bottom:10px;
+  animation:fadeUp .7s ease .1s both;
+  text-shadow:0 0 80px rgba(201,168,76,.15);
+}
+.hero-h1 .red{color:var(--red)}
+.hero-sub{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,30px);
+  font-style:italic;color:var(--gold-lt);margin-bottom:36px;font-weight:300;
+  animation:fadeUp .7s ease .2s both;
+}
+.hero-desc{
+  max-width:580px;font-size:17px;line-height:1.8;color:var(--cream-dk);
+  margin-bottom:56px;animation:fadeUp .7s ease .3s both;
+}
+.hero-desc strong{color:var(--cream);font-weight:600}
+.hero-cta{animation:fadeUp .7s ease .4s both}
+.hero-badges{
+  display:flex;align-items:center;justify-content:center;gap:28px;
+  margin-top:48px;flex-wrap:wrap;animation:fadeUp .7s ease .5s both;
+}
+.badge-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:500;color:var(--silver);
+}
+.badge-icon{color:var(--gold);font-size:18px}
+
+/* ── BUTTONS ── */
+.btn-primary{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold-dk),var(--gold),var(--gold-lt));
+  color:var(--ink);font-family:'Cinzel',serif;font-size:15px;font-weight:700;
+  padding:20px 52px;border-radius:100px;text-decoration:none;
+  letter-spacing:1px;text-transform:uppercase;cursor:pointer;border:none;
+  box-shadow:0 8px 40px rgba(201,168,76,.4);
+  transition:transform .2s,box-shadow .2s;
+  animation:pulse-glow 2.5s infinite;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(201,168,76,.5)}
+.btn-primary:active{transform:translateY(0)}
+.btn-primary.full{display:block;text-align:center;width:100%}
+.btn-outline{
+  display:inline-block;background:transparent;color:var(--gold);
+  font-family:'Cinzel',serif;font-size:13px;font-weight:600;
+  padding:14px 36px;border-radius:100px;text-decoration:none;
+  border:1px solid rgba(201,168,76,.4);letter-spacing:1px;text-transform:uppercase;
+  cursor:pointer;transition:background .2s,border-color .2s;
+}
+.btn-outline:hover{background:rgba(201,168,76,.08);border-color:var(--gold)}
+@keyframes pulse-glow{
+  0%,100%{box-shadow:0 8px 40px rgba(201,168,76,.4)}
+  50%{box-shadow:0 8px 60px rgba(201,168,76,.65),0 0 30px rgba(201,168,76,.25)}
+}
+
+/* ── SECTION COMMONS ── */
+.section{padding:100px 24px;max-width:940px;margin:0 auto}
+.section-label{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;
+}
+.section-title{
+  font-family:'Cinzel',serif;font-size:clamp(28px,4vw,50px);font-weight:700;
+  color:var(--white);line-height:1.1;margin-bottom:28px;
+}
+.section-title .red{color:var(--red)}
+.section-title .gold{color:var(--gold)}
+.section-body{font-size:17px;line-height:1.85;color:var(--cream-dk)}
+.gold-rule{width:56px;height:3px;background:var(--gold);border-radius:2px;margin:0 auto 48px}
+.full-rule{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);margin:80px 0}
+
+/* ── DARK BAND ── */
+.dark-band{background:var(--ink-mid);padding:80px 24px}
+
+/* ── PAIN GRID ── */
+.pain-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;max-width:940px;margin:56px auto 0;
+}
+.pain-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:var(--r);padding:32px 24px;
+  transition:border-color .3s,transform .3s;
+}
+.pain-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-4px)}
+.pain-icon{font-size:32px;margin-bottom:16px}
+.pain-card h3{font-family:'Cinzel',serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:10px}
+.pain-card p{font-size:14px;color:var(--silver);line-height:1.7}
+
+/* ── WHAT'S INSIDE ── */
+.inside-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;margin-top:56px;
+}
+.inside-part{
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(201,168,76,.1);
+  border-top:3px solid var(--gold);
+  border-radius:0 0 var(--r) var(--r);
+  padding:28px 24px;transition:background .3s;
+}
+.inside-part:hover{background:rgba(201,168,76,.04)}
+.part-label{
+  font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:3px;color:var(--gold);margin-bottom:10px;text-transform:uppercase;
+}
+.part-title{font-family:'Cinzel',serif;font-size:16px;font-weight:600;color:var(--white);margin-bottom:12px}
+.chapter-list{list-style:none}
+.chapter-list li{
+  font-size:13px;color:var(--silver);padding:5px 0;
+  border-bottom:1px solid rgba(255,255,255,.04);line-height:1.5;
+  display:flex;gap:8px;align-items:flex-start;
+}
+.chapter-list li:last-child{border-bottom:none}
+.ch-num{color:var(--gold);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px}
+
+/* ── QUOTE ── */
+.quote-section{padding:80px 24px;text-align:center}
+.big-quote{
+  max-width:680px;margin:0 auto;
+  padding:48px 40px;
+  background:rgba(201,168,76,.05);
+  border:1px solid rgba(201,168,76,.2);
+  border-radius:var(--r);position:relative;
+}
+.big-quote::before{
+  content:'\201C';position:absolute;top:-20px;left:40px;
+  font-family:'Cormorant Garamond',serif;font-size:100px;
+  color:var(--gold);opacity:.3;line-height:1;
+}
+.big-quote blockquote{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,28px);
+  font-style:italic;color:var(--cream);line-height:1.6;margin-bottom:24px;
+}
+.big-quote cite{
+  font-family:'Cinzel',serif;font-size:12px;font-weight:600;
+  color:var(--gold);letter-spacing:2px;text-transform:uppercase;
+}
+
+/* ── FOR WHO ── */
+.forwho-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;margin-top:48px;
+}
+.forwho-item{
+  display:flex;align-items:flex-start;gap:14px;
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(201,168,76,.1);
+  border-radius:var(--r-sm);padding:20px;
+}
+.check-circle{
+  width:26px;height:26px;border-radius:50%;
+  background:rgba(201,168,76,.12);border:1px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-size:13px;font-weight:700;flex-shrink:0;margin-top:1px;
+}
+.forwho-item p{font-size:15px;color:var(--cream-dk);line-height:1.5}
+
+/* ── AUTHORITY STRIP ── */
+.authority-strip{
+  background:var(--ink-lift);padding:60px 24px;text-align:center;
+  border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);
+}
+.authority-names{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 24px;
+  max-width:860px;margin:32px auto 0;
+}
+.authority-name{
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;
+  color:var(--silver);white-space:nowrap;
+}
+.authority-dot{color:var(--gold);font-size:10px}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:24px;max-width:940px;margin:56px auto 0;
+}
+.testi-card{
+  background:var(--ink-card);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:var(--r);padding:30px 24px;
+  position:relative;transition:border-color .3s;
+}
+.testi-card:hover{border-color:rgba(201,168,76,.3)}
+.stars{color:var(--gold);font-size:14px;letter-spacing:3px;margin-bottom:16px}
+.testi-text{
+  font-family:'Cormorant Garamond',serif;font-size:18px;
+  font-style:italic;color:var(--cream);line-height:1.65;margin-bottom:24px;
+}
+.testi-author{display:flex;align-items:center;gap:12px}
+.avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-dk),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);flex-shrink:0;
+}
+.author-name{font-size:14px;font-weight:600;color:var(--white)}
+.author-role{font-size:12px;color:var(--silver);margin-top:2px}
+.testi-tag{
+  position:absolute;top:-12px;right:20px;
+  background:var(--gold);color:var(--ink);
+  font-size:10px;font-weight:700;letter-spacing:1.5px;
+  padding:4px 12px;border-radius:100px;font-family:'Cinzel',serif;
+}
+
+/* ── VALUE STACK ── */
+.value-stack{
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(201,168,76,.15);
+  border-radius:var(--r);padding:40px;max-width:600px;margin:48px auto 0;
+}
+.value-item{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05);
+}
+.value-item:last-child{border-bottom:none}
+.value-bullet{
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(201,168,76,.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;margin-top:2px;
+}
+.value-text-wrap{}
+.value-name{font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px}
+.value-desc{font-size:13px;color:var(--silver);line-height:1.5}
+.value-price{
+  font-family:'Cinzel',serif;font-size:13px;font-weight:700;
+  color:var(--gold);white-space:nowrap;margin-left:auto;flex-shrink:0;
+}
+
+/* ── PRICE ── */
+.price-section{padding:100px 24px;text-align:center}
+.price-box{
+  max-width:520px;margin:56px auto 0;
+  background:var(--ink-mid);
+  border:1px solid var(--gold);
+  border-radius:24px;padding:52px 44px;
+  position:relative;
+  box-shadow:0 0 100px rgba(201,168,76,.12),0 40px 80px rgba(0,0,0,.5);
+}
+.price-badge-top{
+  position:absolute;top:-18px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--gold-dk),var(--gold));
+  color:var(--ink);font-family:'Cinzel',serif;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:8px 28px;border-radius:100px;white-space:nowrap;
+}
+.price-old{font-size:20px;color:var(--silver);text-decoration:line-through;margin-bottom:8px}
+.discount-pill{
+  display:inline-block;background:rgba(233,69,96,.15);color:var(--red);
+  font-size:13px;font-weight:700;padding:5px 16px;border-radius:100px;
+  margin-bottom:24px;border:1px solid rgba(233,69,96,.3);
+}
+.price-main{
+  display:flex;align-items:baseline;justify-content:center;gap:4px;margin-bottom:8px;
+}
+.price-cur{font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:var(--gold)}
+.price-val{font-family:'Cinzel',serif;font-size:90px;font-weight:900;color:var(--white);line-height:1}
+.price-cents{font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:var(--gold);align-self:flex-start;margin-top:18px}
+.price-note{font-size:14px;color:var(--silver);margin-bottom:36px}
+.price-includes{list-style:none;text-align:left;margin-bottom:36px;display:grid;gap:12px}
+.price-includes li{
+  display:flex;align-items:center;gap:10px;
+  font-size:15px;color:var(--cream-dk);
+}
+.price-includes li::before{
+  content:'✓';width:22px;height:22px;border-radius:50%;
+  background:rgba(201,168,76,.15);color:var(--gold);
+  font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+
+/* ── GUARANTEE ── */
+.guarantee{
+  display:flex;align-items:flex-start;gap:20px;
+  background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.2);
+  border-radius:var(--r);padding:28px 24px;max-width:560px;margin:40px auto 0;
+  text-align:left;
+}
+.guarantee-icon{font-size:44px;flex-shrink:0}
+.guarantee h4{font-family:'Cinzel',serif;font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px}
+.guarantee p{font-size:14px;color:var(--silver);line-height:1.65}
+
+/* ── FAQ ── */
+.faq-section{background:var(--ink-mid);padding:80px 24px}
+.faq-wrap{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(201,168,76,.1);padding:28px 0}
+.faq-q{
+  font-family:'Cinzel',serif;font-size:16px;font-weight:600;color:var(--white);
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  gap:16px;user-select:none;
+}
+.faq-q:hover{color:var(--gold-lt)}
+.faq-arrow{color:var(--gold);font-size:22px;transition:transform .3s;flex-shrink:0}
+.faq-a{font-size:15px;color:var(--silver);line-height:1.7;margin-top:16px;display:none}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+.faq-item.open .faq-a{display:block}
+
+/* ── FINAL CTA ── */
+.final-cta{
+  padding:120px 24px;text-align:center;
+  background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(233,69,96,.08) 0%,transparent 70%),
+    linear-gradient(180deg,var(--ink) 0%,var(--ink-mid) 100%);
+}
+
+/* ── FOOTER ── */
+footer{
+  background:#04080F;padding:32px 24px;text-align:center;
+  font-size:13px;color:var(--silver);
+  border-top:1px solid rgba(201,168,76,.08);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(28px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .price-val{font-size:70px}
+  .price-box{padding:40px 24px}
+  .urgency-inner{flex-direction:column;gap:10px}
+  .big-quote{padding:36px 24px}
+  .value-stack{padding:28px 20px}
+  .guarantee{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ── URGENCY BAR ── -->
+<div id="urgency-bar">
+  <div class="urgency-inner">
+    <span class="urgency-pill">🔥 OFERTA ESPECIAL</span>
+    <span class="urgency-text">Desconto exclusivo expira em:</span>
+    <div class="timer-wrap">
+      <span class="timer-label">Tempo restante</span>
+      <div class="timer-digits">
+        <div class="t-block" id="t-min">15</div>
+        <span class="t-sep">:</span>
+        <div class="t-block" id="t-sec">00</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-eyebrow">Persuasão · Comunicação · Vendas · Psicanálise</div>
+  <h1 class="hero-h1">Faça Pessoas<br>Dizerem <span class="red">SIM</span></h1>
+  <p class="hero-sub">O guia completo das ciências da influência humana</p>
+  <p class="hero-desc">
+    <strong>16 capítulos.</strong> 64 ações práticas. Mais de 80 citações reais de Freud, Cialdini, Kahneman, Carnegie, Voss e outros.<br><br>
+    Não é autoajuda vaga. É o sistema completo — da persuasão à psicanálise — para você influenciar com ética, comunicar com precisão e vender com maestria.
+  </p>
+  <div class="hero-cta">
+    <a href="#preco" class="btn-primary">Quero meu acesso com desconto →</a>
+  </div>
+  <div class="hero-badges">
+    <div class="badge-item">
+      <span class="badge-icon">📚</span>
+      <span>16 capítulos densos</span>
+    </div>
+    <div class="badge-item">
+      <span class="badge-icon">⚡</span>
+      <span>64 ações práticas</span>
+    </div>
+    <div class="badge-item">
+      <span class="badge-icon">🧠</span>
+      <span>+80 citações reais</span>
+    </div>
+    <div class="badge-item">
+      <span class="badge-icon">🔒</span>
+      <span>Garantia de 7 dias</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── DOR ── -->
+<section class="dark-band">
+  <div class="section" style="text-align:center;padding-top:0;padding-bottom:0">
+    <div class="section-label">Você se identifica?</div>
+    <h2 class="section-title">O problema não é falta de <span class="gold">talento</span>.<br>É falta de sistema.</h2>
+    <p class="section-body" style="max-width:580px;margin:0 auto">A maioria das pessoas influencia por acaso — quando funciona, não sabe por quê. Quando falha, não sabe o que mudar. Este ebook resolve isso.</p>
+  </div>
+  <div class="pain-grid">
+    <div class="pain-card reveal">
+      <div class="pain-icon">🤐</div>
+      <h3>Não sabe como persuadir</h3>
+      <p>Você tem bons argumentos mas as pessoas raramente mudam de ideia quando você fala. Falta o sistema por trás da influência real.</p>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-icon">💬</div>
+      <h3>Comunicação que não chega</h3>
+      <p>O que você quer dizer e o que o outro entende raramente é a mesma coisa. Conflitos, mal-entendidos e frustrações repetidas.</p>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-icon">💰</div>
+      <h3>Vendas travadas</h3>
+      <p>Você tem um produto bom, mas não sabe fechar. Teme objeções, foge do silêncio e dá desconto quando deveria defender valor.</p>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-icon">🔁</div>
+      <h3>Padrões que se repetem</h3>
+      <p>Mesmas situações, mesmas reações, mesmo resultado. Sem entender o que move o ser humano por dentro, você só repete o script.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUOTE 1 ── -->
+<section class="quote-section reveal">
+  <div class="big-quote">
+    <div class="gold-rule"></div>
+    <blockquote>"Não tomamos decisões racionais — tomamos decisões emocionais e depois as justificamos racionalmente."</blockquote>
+    <cite>— António Damásio · Neurocientista, Universidade do Sul da Califórnia</cite>
+  </div>
+</section>
+
+<!-- ── AUTHORITY ── -->
+<div class="authority-strip">
+  <p class="section-label" style="text-align:center">Você vai aprender com</p>
+  <h2 class="section-title" style="text-align:center;font-size:clamp(20px,3vw,32px);margin-bottom:0">As mentes que definiram a influência humana</h2>
+  <div class="authority-names">
+    <span class="authority-name">Sigmund Freud</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Robert Cialdini</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Daniel Kahneman</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Dale Carnegie</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Chris Voss</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Marshall Rosenberg</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Neil Rackham</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Jacques Lacan</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Viktor Frankl</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Viktor Kahneman</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Brené Brown</span><span class="authority-dot">✦</span>
+    <span class="authority-name">Simon Sinek</span>
+  </div>
+</div>
+
+<!-- ── O QUE ESTÁ DENTRO ── -->
+<section class="section reveal" style="text-align:center">
+  <div class="section-label">O que está dentro</div>
+  <h2 class="section-title">4 ciências. 16 capítulos.<br>Um sistema <span class="gold">completo</span>.</h2>
+  <p class="section-body" style="max-width:600px;margin:0 auto">Cada parte foi construída para se conectar com a seguinte. Persuasão sem autoconhecimento é manipulação. Vendas sem comunicação é pressão. Psicanálise sem prática é teoria. Aqui, tudo converge.</p>
+  <div class="inside-grid">
+    <div class="inside-part reveal">
+      <div class="part-label">Parte I · 4 capítulos</div>
+      <div class="part-title">Persuasão</div>
+      <ul class="chapter-list">
+        <li><span class="ch-num">01</span>Os Fundamentos — Ethos, Pathos e Logos</li>
+        <li><span class="ch-num">02</span>As 6 Armas de Cialdini</li>
+        <li><span class="ch-num">03</span>Persuasão Não-Verbal</li>
+        <li><span class="ch-num">04</span>Ética na Persuasão</li>
+      </ul>
+    </div>
+    <div class="inside-part reveal">
+      <div class="part-label">Parte II · 4 capítulos</div>
+      <div class="part-title">Comunicação</div>
+      <ul class="chapter-list">
+        <li><span class="ch-num">05</span>Estrutura da Comunicação Eficaz</li>
+        <li><span class="ch-num">06</span>Escuta Ativa e Empatia</li>
+        <li><span class="ch-num">07</span>Comunicação Não-Violenta</li>
+        <li><span class="ch-num">08</span>A Arte de Fazer Perguntas</li>
+      </ul>
+    </div>
+    <div class="inside-part reveal">
+      <div class="part-label">Parte III · 4 capítulos</div>
+      <div class="part-title">Arte de Vendas</div>
+      <ul class="chapter-list">
+        <li><span class="ch-num">09</span>O Processo de Vendas</li>
+        <li><span class="ch-num">10</span>Objeções: Onde a Venda Começa</li>
+        <li><span class="ch-num">11</span>Fechamento sem Pressão</li>
+        <li><span class="ch-num">12</span>Relacionamento e Pós-Venda</li>
+      </ul>
+    </div>
+    <div class="inside-part reveal">
+      <div class="part-label">Parte IV · 4 capítulos</div>
+      <div class="part-title">Psicanálise</div>
+      <ul class="chapter-list">
+        <li><span class="ch-num">13</span>Os Fundamentos da Psicanálise</li>
+        <li><span class="ch-num">14</span>Mecanismos de Defesa</li>
+        <li><span class="ch-num">15</span>Transferência e Repetição</li>
+        <li><span class="ch-num">16</span>Psicanálise e Relações Humanas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA MID ── -->
+<div style="text-align:center;padding:20px 24px 80px">
+  <a href="#preco" class="btn-primary">Ver oferta com desconto →</a>
+</div>
+
+<!-- ── PARA QUEM É ── -->
+<section class="dark-band">
+  <div class="section" style="text-align:center;padding-top:0;padding-bottom:0">
+    <div class="section-label">Para quem é</div>
+    <h2 class="section-title">Este guia é para você se está<br>pronto para <span class="red">parar de improvisar</span></h2>
+    <div class="forwho-grid">
+      <div class="forwho-item reveal">
+        <div class="check-circle">✓</div>
+        <p>Quer influenciar de forma ética — sem manipular, sem pressionar, sem perder a integridade</p>
+      </div>
+      <div class="forwho-item reveal">
+        <div class="check-circle">✓</div>
+        <p>Tem um negócio ou quer abrir um, mas sente que falta clareza nas vendas e no marketing</p>
+      </div>
+      <div class="forwho-item reveal">
+        <div class="check-circle">✓</div>
+        <p>Já leu outros materiais mas nunca colocou nada em prática — quer ação, não mais teoria</p>
+      </div>
+      <div class="forwho-item reveal">
+        <div class="check-circle">✓</div>
+        <p>Quer entender o que realmente move as pessoas — por dentro e por fora — e usar isso com sabedoria</p>
+      </div>
+      <div class="forwho-item reveal">
+        <div class="check-circle">✓</div>
+        <p>Sente que suas comunicações não chegam onde deveriam — nas vendas, na liderança, nas relações</p>
+      </div>
+      <div class="forwho-item reveal">
+        <div class="check-circle">✓</div>
+        <p>Está disposto a ser honesto consigo mesmo e a agir — não só a ler e se sentir inteligente</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUOTE 2 ── -->
+<section class="quote-section reveal">
+  <div class="big-quote">
+    <div class="gold-rule"></div>
+    <blockquote>"Entre o estímulo e a resposta há um espaço. Nesse espaço está o nosso poder de escolher nossa resposta. Na nossa resposta estão nosso crescimento e nossa liberdade."</blockquote>
+    <cite>— Viktor Frankl · Em Busca de Sentido (1946)</cite>
+  </div>
+</section>
+
+<!-- ── DEPOIMENTOS ── -->
+<section class="dark-band">
+  <div style="text-align:center;padding-bottom:0">
+    <div class="section-label">Depoimentos</div>
+    <h2 class="section-title" style="max-width:520px;margin:0 auto">Resultados reais de pessoas <span class="gold">reais</span></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <span class="testi-tag">DESTAQUE</span>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"A parte de psicanálise me fez entender por que eu repetia os mesmos erros em negociação. Nunca tinha conectado essas duas áreas. Mudou completamente como eu conduzo conversas difíceis."</p>
+      <div class="testi-author">
+        <div class="avatar">RM</div>
+        <div>
+          <div class="author-name">Rafael M.</div>
+          <div class="author-role">Sócio de consultoria, RJ</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Eu achei que era boa em comunicação. Esse guia me mostrou que comunicava bem só com quem era parecido comigo. Aprendi a adaptar para cada perfil. Minha taxa de fechamento subiu 40% em 60 dias."</p>
+      <div class="testi-author">
+        <div class="avatar">CA</div>
+        <div>
+          <div class="author-name">Camila A.</div>
+          <div class="author-role">Vendedora B2B, SP</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"As 64 ações são o diferencial absurdo. Você não fecha o capítulo sem ter algo concreto para executar. Fiz todas as ações do capítulo de persuasão e em duas semanas estava influenciando reuniões de forma completamente diferente."</p>
+      <div class="testi-author">
+        <div class="avatar">GT</div>
+        <div>
+          <div class="author-name">Gabriel T.</div>
+          <div class="author-role">Gerente de produtos, MG</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Trabalho com RH há 8 anos e nunca tinha uma estrutura clara para conversas difíceis com colaboradores. A Comunicação Não-Violenta do capítulo 7 transformou como conduzo feedback. Resultado imediato."</p>
+      <div class="testi-author">
+        <div class="avatar">FS</div>
+        <div>
+          <div class="author-name">Fernanda S.</div>
+          <div class="author-role">Analista de RH, PR</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Li o capítulo de objeções numa tarde e fui para uma reunião de vendas logo depois. Usei o método ARC pela primeira vez. Fechei o contrato que estava travado há três semanas. Pode ter sido coincidência — mas eu sei que não foi."</p>
+      <div class="testi-author">
+        <div class="avatar">LP</div>
+        <div>
+          <div class="author-name">Lucas P.</div>
+          <div class="author-role">Fundador de startup, RS</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Sou psicoterapeuta e fiquei desconfiada com a mistura de psicanálise com vendas. Mas o autor trata o tema com rigor e respeito. A parte de mecanismos de defesa em contexto profissional é brilhante e aplicável de imediato."</p>
+      <div class="testi-author">
+        <div class="avatar">AM</div>
+        <div>
+          <div class="author-name">Andréa M.</div>
+          <div class="author-role">Psicoterapeuta, BA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VALUE STACK ── -->
+<section class="section reveal" style="text-align:center">
+  <div class="section-label">O que você está recebendo</div>
+  <h2 class="section-title">Tudo isso por um <span class="gold">único investimento</span></h2>
+  <div class="value-stack">
+    <div class="value-item">
+      <div class="value-bullet">📖</div>
+      <div class="value-text-wrap">
+        <div class="value-name">Ebook completo — 16 capítulos</div>
+        <div class="value-desc">Persuasão, comunicação, vendas e psicanálise em um único guia coeso e aplicável</div>
+      </div>
+      <div class="value-price">R$ 47</div>
+    </div>
+    <div class="value-item">
+      <div class="value-bullet">⚡</div>
+      <div class="value-text-wrap">
+        <div class="value-name">64 ações práticas imediatas</div>
+        <div class="value-desc">Exercícios concretos no final de cada capítulo — para sair da leitura e entrar em ação</div>
+      </div>
+      <div class="value-price">R$ 27</div>
+    </div>
+    <div class="value-item">
+      <div class="value-bullet">🧠</div>
+      <div class="value-text-wrap">
+        <div class="value-name">+80 citações de autoridades reais</div>
+        <div class="value-desc">Freud, Cialdini, Kahneman, Carnegie, Voss, Frankl e outros — curadas e contextualizadas</div>
+      </div>
+      <div class="value-price">R$ 19,90</div>
+    </div>
+    <div class="value-item">
+      <div class="value-bullet">♾️</div>
+      <div class="value-text-wrap">
+        <div class="value-name">Acesso vitalício + atualizações</div>
+        <div class="value-desc">Comprou uma vez, tem para sempre — incluindo todas as revisões futuras do material</div>
+      </div>
+      <div class="value-price">R$ 19,90</div>
+    </div>
+    <div style="border-top:2px solid rgba(201,168,76,.3);margin-top:16px;padding-top:20px;display:flex;justify-content:space-between;align-items:center">
+      <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--white)">Valor total real</div>
+      <div style="text-align:right">
+        <div style="font-size:14px;color:var(--silver);text-decoration:line-through">R$ 97,00</div>
+        <div style="font-family:'Cinzel',serif;font-size:22px;font-weight:900;color:var(--gold)">R$ 19,90 hoje</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICE ── -->
+<section class="price-section" id="preco">
+  <div class="section-label" style="text-align:center">Oferta por tempo limitado</div>
+  <h2 class="section-title" style="text-align:center">Invista no sistema que vai te<br>dar retorno <span class="gold">pelo resto da vida</span></h2>
+  <div class="price-box reveal">
+    <div class="price-badge-top">🔥 DESCONTO ATIVO — OFERTA ESPECIAL</div>
+    <div class="price-old">De R$ 97,00</div>
+    <div class="discount-pill">80% OFF — só enquanto o timer estiver ativo</div>
+    <div class="price-main">
+      <span class="price-cur">R$</span>
+      <span class="price-val">19</span>
+      <span class="price-cents">,90</span>
+    </div>
+    <p class="price-note">Pagamento único · Acesso imediato · Download em PDF</p>
+    <ul class="price-includes">
+      <li>Ebook completo — 4 partes, 16 capítulos</li>
+      <li>64 ações concretas para executar agora</li>
+      <li>+80 citações reais de autoridades mundiais</li>
+      <li>Persuasão, comunicação, vendas e psicanálise</li>
+      <li>Acesso vitalício + todas as atualizações futuras</li>
+    </ul>
+    <button class="btn-primary full" onclick="alert('Redirecionando para o checkout seguro...')">
+      Quero meu acesso agora — R$ 19,90 →
+    </button>
+    <p style="font-size:13px;color:var(--silver);margin-top:18px">🔒 Pagamento 100% seguro &nbsp;|&nbsp; Garantia incondicional de 7 dias</p>
+  </div>
+  <div class="guarantee reveal">
+    <div class="guarantee-icon">🛡️</div>
+    <div>
+      <h4>Garantia incondicional de 7 dias</h4>
+      <p>Se você ler o guia, aplicar as ações e sentir que não valeu — devolvo 100% do seu investimento. Sem perguntas, sem burocracia. O risco é inteiramente meu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section">
+  <div class="faq-wrap">
+    <div class="section-label" style="text-align:center">Dúvidas</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:48px">Perguntas <span class="gold">frequentes</span></h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Para quem é esse guia?<span class="faq-arrow">+</span></div>
+      <div class="faq-a">Para qualquer pessoa que precise influenciar, comunicar, vender ou entender melhor o ser humano — profissionais de vendas, líderes, empreendedores, terapeutas, professores, ou simplesmente quem quer se relacionar melhor. Não há pré-requisito técnico.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Por que combinar persuasão, comunicação, vendas e psicanálise?<span class="faq-arrow">+</span></div>
+      <div class="faq-a">Porque essas áreas são inseparáveis na prática. Você pode dominar técnicas de persuasão, mas sem autoconhecimento (psicanálise) vai projetar e reagir de forma automática. Pode vender bem, mas sem comunicação eficaz vai perder clientes no pós-venda. Este guia trata o ser humano como um todo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">É mais um livro de autoajuda vaga?<span class="faq-arrow">+</span></div>
+      <div class="faq-a">Não. O conteúdo é baseado em pesquisas científicas, autores referência mundialmente e princípios testados em campo. Não há promessa de transformação mágica — há método, rigor e 64 ações concretas para você sair do lugar agora.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Como recebo o ebook?<span class="faq-arrow">+</span></div>
+      <div class="faq-a">Imediatamente após a confirmação do pagamento, você recebe o link de download por e-mail. O acesso é vitalício — você pode baixar quantas vezes quiser, em qualquer dispositivo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">E se eu não gostar?<span class="faq-arrow">+</span></div>
+      <div class="faq-a">Você tem 7 dias de garantia incondicional. Basta enviar um e-mail e o valor é devolvido integralmente. Sem perguntas, sem burocracia. Se não entregar valor, não merece ficar com seu dinheiro.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">O desconto vai expirar mesmo?<span class="faq-arrow">+</span></div>
+      <div class="faq-a">Sim. O contador no topo é real. Quando chegar a zero, o preço retorna a R$ 97,00. A oferta de R$ 19,90 é válida somente enquanto o timer estiver ativo nessa sessão.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta reveal">
+  <div class="section-label" style="text-align:center">Última chance</div>
+  <h2 class="section-title" style="text-align:center;max-width:580px;margin:0 auto 24px">A decisão que você toma agora<br><span class="red">define quem você será</span> daqui a um ano</h2>
+  <p class="section-body" style="max-width:520px;margin:0 auto 56px;text-align:center">Quem age amanhã raramente chega lá. O segundo melhor momento para aprender a influenciar com inteligência e ética foi ontem. O melhor momento é agora.</p>
+  <div style="text-align:center">
+    <button class="btn-primary" onclick="document.getElementById('preco').scrollIntoView({behavior:'smooth'})">
+      Garantir meu desconto de 80% →
+    </button>
+    <p style="font-size:13px;color:var(--silver);margin-top:20px">
+      Restam <span id="final-timer" style="color:var(--gold);font-weight:700;font-family:'Cinzel',serif">15:00</span> com desconto · Garantia de 7 dias
+    </p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p style="font-family:'Cinzel',serif;font-size:15px;color:var(--gold);margin-bottom:8px">Faça Pessoas Dizerem SIM</p>
+  <p>© 2025 · Todos os direitos reservados</p>
+  <p style="margin-top:6px">Produto digital · Entrega imediata · Pagamento seguro</p>
+</footer>
+
+<script>
+// ── TIMER ──
+let total = 15 * 60;
+function tick(){
+  const m=Math.floor(total/60), s=total%60;
+  const mm=String(m).padStart(2,'0'), ss=String(s).padStart(2,'0');
+  document.getElementById('t-min').textContent=mm;
+  document.getElementById('t-sec').textContent=ss;
+  const ft=document.getElementById('final-timer');
+  if(ft)ft.textContent=mm+':'+ss;
+  if(total<=0){
+    clearInterval(iv);
+    document.getElementById('t-min').textContent='00';
+    document.getElementById('t-sec').textContent='00';
+    if(ft)ft.textContent='00:00';
+    const bar=document.querySelector('.urgency-text');
+    if(bar)bar.textContent='O desconto expirou — preço retornou a R$ 97,00';
+  } else { total--; }
+}
+tick();
+const iv=setInterval(tick,1000);
+
+// ── REVEAL ──
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ── FAQ ──
+function toggleFaq(el){el.parentElement.classList.toggle('open')}
+</script>
+</body>
+</html>
